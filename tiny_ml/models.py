@@ -5,7 +5,7 @@ from scipy.spatial.distance import cdist
 
 class LinearRegression():
     def fit(self, x, y):
-        self.weight = np.linalg.lstsq(x, y, rcond=None)
+        self.weight = np.linalg.lstsq(x, y, rcond=None)[0]
     def predict(self, x):
         return x.dot(self.weight)
 

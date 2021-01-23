@@ -1,6 +1,6 @@
 import numpy as np
 from sklearn import datasets
-from tiny_ml.utils import Plot, normalize, train_test_split
+from tiny_ml.utils import Plot, train_test_split, normalize
 from tiny_ml import KNN
 
 
