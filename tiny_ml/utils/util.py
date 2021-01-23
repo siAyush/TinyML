@@ -17,7 +17,7 @@ class Plot():
         X_transformed = self._transform(X, dim=2)
         x1 = X_transformed[:, 0]
         x2 = X_transformed[:, 1]
-        
+
         class_distr = []
         y = np.array(y).astype(int)
         colors = [self.cmap(i) for i in np.linspace(0, 1, len(np.unique(y)))]
@@ -43,3 +43,27 @@ class Plot():
         plt.xlabel('Principal Component 1')
         plt.ylabel('Principal Component 2')
         plt.show()
+
+
+def shuffle_data(x, y, seed=None):
+    if seed:
+        np.random.seed(seed)
+    idx = np.arange(x.shape[0])
+    np.random.shuffle(idx)
+    return x[idx], y[idx]
+
+
+def train_test_split(x, y, test_size=0.3, shuffle=True, seed=None):
+    if shuffle:
+        x, y = shuffle_data(x, y, seed)
+    split_i = len(y) - int(len(y) // (1 / test_size))
+    x_train, x_test = x[:split_i], x[split_i:]
+    y_train, y_test = y[:split_i], y[split_i:]
+    return x_train, x_test, y_train, y_test
+
+
+def normalize(X, axis=-1, order=2):
+    """ Normalize the dataset X """
+    l2 = np.atleast_1d(np.linalg.norm(X, order, axis))
+    l2[l2 == 0] = 1
+    return X / np.expand_dims(l2, axis)

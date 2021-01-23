@@ -15,7 +15,7 @@ class LogisticRegression():
         self.weight = np.random.rand(x.shape[1])
         for i in range(n_iter):
             self.weight -= lr * (self.predict(x)-y).dot(x)
-    def predict(self, y):
+    def predict(self, x):
         return sigmoid(x.dot(self.weight))
 
 
