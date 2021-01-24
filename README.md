@@ -5,7 +5,7 @@ A tiny librarie with tweet-sized implementations of machine learning models in N
 ## Installation
 ```
 $ git clone https://github.com/siAyush/TinyML.git
-$ cd NapkinML
+$ cd TinyML
 $ sudo python setup.py install
 ```
 ## Run Examples
