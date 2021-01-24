@@ -19,7 +19,7 @@ def main():
     accuracy = np.mean(y_pred == y_test)
     print ("Accuracy:", accuracy)
 
-    Plot().plot_in_2d(X, y,title="Logistic Regression", accuracy=accuracy, legend_labels=data['target_names'])
+    Plot().plot_in_2d(X, y,title="KNN", accuracy=accuracy, legend_labels=data['target_names'])
 
 
 if __name__ == "__main__":
