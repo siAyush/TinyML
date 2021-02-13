@@ -15,11 +15,11 @@ $ python tiny_ml/demo/knn.py
 
 ## Implementations
 
-## Linear Regression
+### Linear Regression
 ![Linear Regression](./images/linear.png)
 
-## Logistic Regression
+### Logistic Regression
 ![Logistic Regression](./images/logistic.png)
 
-## KNN
+### KNN
 ![KNN](./images/knn.png)
